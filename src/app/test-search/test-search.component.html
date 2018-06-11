@@ -1,0 +1,15 @@
+<div>
+  <input #searchBox id="search-box" [(ngModel)]="name" />
+
+  <button (click)="search()">搜索</button>
+
+  <ul class="search-result">
+    <li *ngFor="let person of person$ | async">
+      <a routerLink="/detail/{{person.name}}">
+        {{person.name}}
+      </a>
+    </li>
+  </ul>
+
+
+</div>
