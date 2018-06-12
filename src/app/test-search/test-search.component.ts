@@ -24,6 +24,14 @@ export class TestSearchComponent implements OnInit {
     }, 1000)
   }
 
+  dataSet = [
+    { "id": 0, "name": "张三" },
+    { "id": 1, "name": "李四" },
+    { "id": 2, "name": "王五" },
+  ]
+  bar(event: any) {
+    console.log(event);
+  }
   search(): void {
     // this.searchTerms.next(this.name)
     const a = this.testService.searchPerson(this.name);
@@ -31,4 +39,7 @@ export class TestSearchComponent implements OnInit {
     
   }
 
+  getChildData2(data: any) {
+    console.log(data)
+  }
 }

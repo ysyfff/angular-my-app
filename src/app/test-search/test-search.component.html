@@ -3,13 +3,10 @@
 
   <button (click)="search()">搜索</button>
 
-  <ul class="search-result">
-    <li *ngFor="let person of person$ | async">
-      <a routerLink="/detail/{{person.name}}">
-        {{person.name}}
-      </a>
-    </li>
-  </ul>
-
-
+  <app-test-list [dataSource]="person$" (ass)="getChildData2($event)"></app-test-list>
 </div>
+
+<!-- <li *ngFor="let item of dataSet;let i = index">
+  <span>{{item.name}}</span>----{{i+1}}--{{item.id}}
+  <app-test-list [names]="item" (foo)="bar($event)"></app-test-list>
+</li> -->
